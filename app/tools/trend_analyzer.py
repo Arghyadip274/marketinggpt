@@ -6,7 +6,8 @@ import json
 import logging
 import math
 from dataclasses import dataclass
-from typing import Any, Iterable, Mapping, Protocol, TypedDict, cast
+from typing import Any, Iterable, Mapping, Protocol,  cast
+from typing_extensions import TypedDict
 from urllib.parse import quote
 
 try:

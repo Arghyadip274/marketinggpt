@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import logging
 import math
-from typing import Any, Iterable, Mapping, TypedDict
+from typing import Any, Iterable, Mapping
+from typing_extensions import TypedDict
 
 
 logger = logging.getLogger(__name__)
