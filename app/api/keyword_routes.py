@@ -4,17 +4,21 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.models.keyword_models import KeywordRequest, KeywordResponse, RankedKeyword
-from app.tools.keyword_detector import KeywordOpportunityDetector
+from app.services.keyword_service import KeywordService, KeywordServiceError
 
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 router = APIRouter(tags=["keywords"])
-keyword_detector = KeywordOpportunityDetector()
+
+
+def get_keyword_service() -> KeywordService:
+    """Dependency provider for KeywordService."""
+    return KeywordService()
 
 
 @router.post(
@@ -23,17 +27,19 @@ keyword_detector = KeywordOpportunityDetector()
     status_code=status.HTTP_200_OK,
     summary="Rank keyword opportunities",
 )
-async def keyword_opportunities(request: KeywordRequest) -> KeywordResponse:
+async def keyword_opportunities(
+    request: KeywordRequest,
+    service: KeywordService = Depends(get_keyword_service),
+) -> KeywordResponse:
     """Rank keywords by opportunity score."""
 
     logger.info("Ranking keyword opportunities for %d keywords", len(request.keywords))
 
     try:
-        ranked_keywords = keyword_detector.rank_keywords(
-            [keyword.model_dump() for keyword in request.keywords],
-            normalize=False,
+        ranked_keywords = service.analyze_keywords(
+            [keyword.model_dump() for keyword in request.keywords]
         )
-    except (TypeError, ValueError) as exc:
+    except KeywordServiceError as exc:
         logger.warning("Invalid keyword opportunity request: %s", exc)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

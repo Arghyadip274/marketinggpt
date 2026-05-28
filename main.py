@@ -8,11 +8,17 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 from typing_extensions import TypedDict
 
 from app.api.keyword_routes import router as keyword_router
 from app.api.trend_routes import router as trend_router
+from app.api.website_routes import router as website_router
+from app.api.competitor_routes import router as competitor_router
+from app.api.industry_routes import router as industry_router
+from app.api.questionnaire_routes import router as questionnaire_router
+from app.api.strategy_routes import router as strategy_router
 
 
 SERVICE_NAME = "MarketingGPT API"
@@ -93,6 +99,11 @@ def create_app() -> FastAPI:
 
     application.include_router(keyword_router)
     application.include_router(trend_router)
+    application.include_router(website_router, prefix="/api")
+    application.include_router(competitor_router, prefix="/api")
+    application.include_router(industry_router, prefix="/api")
+    application.include_router(questionnaire_router, prefix="/api")
+    application.include_router(strategy_router, prefix="/api")
 
     @application.get("/health", tags=["health"])
     async def health() -> HealthResponse:

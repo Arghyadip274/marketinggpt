@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Self
 
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 

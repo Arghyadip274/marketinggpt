@@ -1,0 +1,1016 @@
+[
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I grow my brand with a limited marketing budget?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What marketing strategy should I use for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "Which marketing channels are best for my industry?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I increase my brand awareness online?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What is the best customer acquisition strategy for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I improve customer retention?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What type of audience should I target?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I position my brand better than competitors?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What should be my brand messaging?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I make my brand more trustworthy?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What is the best digital marketing roadmap for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I market my startup effectively?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "What low-cost marketing strategies work best for small businesses?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "How can I create a scalable marketing system?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Brand & Marketing Strategy Questions",
+    "question": "Which marketing activities should I prioritize first?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you generate Instagram captions for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "What type of content performs best in my industry?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you create LinkedIn posts for my brand?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "What are some viral reel ideas for my niche?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you generate SEO-friendly blog content?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "What type of content can increase engagement?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you create a monthly content calendar?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "How can I create authority-building content?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you generate promotional email content?",
+    "required": true,
+    "input_type": "email"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "What are some high-converting CTA ideas?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you create storytelling-based marketing content?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "What content should I post consistently?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you create educational content for my audience?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "How can I improve my social media engagement?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Content Generation Questions",
+    "question": "Can you generate content ideas for lead generation?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Which keywords should I target for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "What are the best low-competition keywords in my niche?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Can you generate long-tail keywords for my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "How can I improve my website SEO?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Why is my website not ranking on Google?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Which keywords are my competitors ranking for?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Can you find keyword gaps between my website and competitors?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "How can I improve my organic traffic?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "What type of keywords have buyer intent?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Can you create keyword clusters for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Which pages should target which keywords?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "How can I optimize my homepage for SEO?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Can you generate SEO meta titles and descriptions?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "What internal linking strategy should I use?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "How can I improve my local SEO ranking?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "What SEO improvements can I make using GSC data?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Which pages have low CTR and how can I improve them?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "How can I improve EEAT signals on my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "What are the best keywords for local ranking?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "SEO & Keyword Questions",
+    "question": "Can you generate semantic keyword ideas?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "Which keywords are helping my competitors rank?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "How can I outrank my competitors in search results?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "What SEO weaknesses do my competitors have?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "Which competitor pages are generating the most traffic?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "How can I identify keyword opportunities competitors missed?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "What content strategy are competitors using?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "Which backlinks should I target based on competitors?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "How can I compare my SEO performance with competitors?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "Which competitor keywords should I avoid?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Competitor SEO Questions",
+    "question": "What are the easiest competitor keywords to target?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I optimize my Google My Business profile?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What keywords should I use for local SEO?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I rank higher on Google Maps?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What type of GMB posts should I publish?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I increase local customer visibility?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What local SEO strategy works best for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve my Google reviews?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "Can you generate replies for customer reviews?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What nearby search keywords should I target?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve local trust signals?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "Website Builder & Website Marketing Questions",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How should I structure my homepage for better conversions?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What sections should my business website include?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve my website conversion rate?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What CTA should I place on my landing page?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I reduce bounce rate on my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What website layout works best for lead generation?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I optimize my website for SEO?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What homepage content should I add for better engagement?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve the customer journey on my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "Which website pages are most important for SEO?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I make my website more trustworthy?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What website content can improve conversions?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How should I structure my service pages?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What FAQ content should I include on my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve mobile website experience?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "What website design elements improve conversions?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Google My Business (GMB) Questions",
+    "question": "How can I improve website engagement?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I improve my Meta Ads performance?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What audience should I target for Facebook Ads?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I reduce CPC in my campaigns?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I improve ROAS?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What type of ad creatives convert better?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "Can you generate Meta ad copy for my brand?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What retargeting strategy should I use?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How should I allocate my ad budget?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What is the best Google Ads strategy for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I improve my ad CTR?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "Which campaign objective should I choose?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I scale my ad campaigns?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What A/B testing should I run?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "What CTA works best in ads?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Performance Marketing Questions",
+    "question": "How can I improve lead quality from ads?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Why has my website traffic dropped?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Which pages are performing best on my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "What are the top traffic sources for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "How can I improve my website engagement metrics?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "What does bounce rate indicate?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "How can I improve session duration?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Which marketing channel is performing best?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "What insights can I get from GA4?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "How can I improve low-performing pages?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Which keywords generate the most traffic?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "How can I improve conversion tracking?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "What marketing KPIs should I monitor?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Why are impressions high but clicks low?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "How can I improve my conversion funnel?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Analytics & Reporting Questions",
+    "question": "Can you generate a marketing performance summary?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "How can I generate more leads online?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "What type of lead magnet should I create?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "How can I improve landing page conversions?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "What funnel strategy works best for my business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "How can I reduce drop-offs in my funnel?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "What email nurturing sequence should I use?",
+    "required": true,
+    "input_type": "email"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "How can I improve customer onboarding?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "What TOFU/MOFU/BOFU strategy should I follow?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "How can I improve lead quality?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Lead Generation & Funnel Questions",
+    "question": "Which pages should I use for lead generation?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "How can AI improve my marketing strategy?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "What marketing tasks should I automate?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "How can AI help in SEO optimization?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "Can AI improve content generation quality?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "How can AI identify keyword opportunities?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "What AI workflows can improve productivity?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "How can AI improve campaign performance?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "Can AI predict content performance?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "How can AI improve customer personalization?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "AI Marketing Questions",
+    "question": "What automated marketing workflows should I use?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I grow my Instagram page organically?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What type of reels perform best right now?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How often should I post on social media?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What hashtags should I use for my niche?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I improve LinkedIn engagement?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What content works best for B2B marketing?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I increase followers organically?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What posting time works best for my audience?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I create engaging carousel posts?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What social media strategy should I follow?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "Customer Psychology & Conversion Questions",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "Why are visitors not converting into customers?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What messaging creates urgency?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I increase customer trust?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What emotional triggers work best in marketing?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I improve customer engagement?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What type of content builds authority?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I make my CTA more persuasive?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "Why are users leaving my website quickly?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "How can I improve customer loyalty?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Social Media Marketing Questions",
+    "question": "What trust signals should I add to my website?",
+    "required": true,
+    "input_type": "url"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "What marketing strategy works best for restaurants?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "How should I market my e-commerce business?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "What SEO strategy works for real estate businesses?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "How can healthcare businesses improve online marketing?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "What marketing channels work best for SaaS companies?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "How can local businesses improve visibility?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "What content strategy works for agencies?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "How should educational brands market online?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "What marketing approach works for startups?",
+    "required": true,
+    "input_type": "text"
+  },
+  {
+    "category": "Industry-Specific Marketing Questions",
+    "question": "How can personal brands grow online?",
+    "required": true,
+    "input_type": "text"
+  }
+]

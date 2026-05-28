@@ -1,0 +1,182 @@
+"""LangGraph orchestration engine for the marketing pipeline."""
+
+import logging
+from typing import Any
+from typing_extensions import TypedDict
+
+from langgraph.graph import StateGraph, START, END
+
+# Import the pre-configured tools
+from app.chains.tools import (
+    process_questionnaire_tool,
+    analyze_website_tool,
+    analyze_competitors_tool,
+    analyze_industry_tool,
+    analyze_keywords_tool,
+    analyze_trends_tool,
+    generate_master_strategy_tool,
+)
+from app.rag.retriever import KnowledgeRetriever
+
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
+
+
+# 1. Define the Global State
+class MarketingState(TypedDict, total=False):
+    """The graph state representing the lifecycle of a marketing analysis."""
+    
+    # Core Inputs
+    questionnaire_answers: list[dict[str, str]]
+    website_url: str
+    competitors: list[str]
+    target_keywords: list[str]
+    
+    # Intermediary Analysis Payloads
+    business_profile: dict[str, Any]
+    website_data: dict[str, Any]
+    competitor_data: dict[str, Any]
+    industry_data: dict[str, Any]
+    ranked_keywords: list[dict[str, Any]]
+    trend_data: dict[str, Any]
+    
+    # RAG Context
+    rag_context: list[str]
+    
+    # Final Output
+    marketing_strategy: dict[str, Any]
+
+
+# 2. Node Implementations
+def node_process_questionnaire(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Processing questionnaire.")
+    if "questionnaire_answers" in state:
+        try:
+            profile = process_questionnaire_tool.invoke({"answers": state["questionnaire_answers"]})
+            state["business_profile"] = profile
+        except Exception as e:
+            logger.warning(f"Failed to process questionnaire (likely missing required fields): {e}. Falling back to default profile.")
+            # Build a mock profile from the raw answers if validation fails
+            mock_data = {ans.get("question", "Unknown"): ans.get("answer", "") for ans in state["questionnaire_answers"]}
+            state["business_profile"] = {"profile_data": mock_data}
+    return state
+
+
+def node_analyze_website(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Analyzing website.")
+    if "website_url" in state:
+        data = analyze_website_tool.invoke({"url": state["website_url"]})
+        state["website_data"] = data
+    return state
+
+
+def node_analyze_competitors(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Analyzing competitors.")
+    if "competitors" in state:
+        data = analyze_competitors_tool.invoke({"urls": state["competitors"]})
+        state["competitor_data"] = data
+    return state
+
+
+def node_analyze_industry(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Analyzing industry patterns.")
+    # Extract an industry hint from the generated profile if available
+    industry_hint = "generic"
+    if "business_profile" in state:
+        profile_text = str(state["business_profile"]).lower()
+        for ind in ["saas", "ecommerce", "real estate", "healthcare", "finance"]:
+            if ind in profile_text:
+                industry_hint = ind
+                break
+    
+    data = analyze_industry_tool.invoke({"industry_name": industry_hint})
+    state["industry_data"] = data
+    return state
+
+
+def node_analyze_keywords(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Analyzing and ranking keywords.")
+    if "target_keywords" in state:
+        # Construct mock keyword dicts for the backend tool
+        kw_dicts = [
+            {
+                "keyword": kw,
+                "search_volume": 1000,
+                "difficulty": 50,
+                "cpc": 1.0,
+                "trend_growth": 10,
+                "intent_score": 80
+            }
+            for kw in state["target_keywords"]
+        ]
+        data = analyze_keywords_tool.invoke({"keywords_data": kw_dicts})
+        state["ranked_keywords"] = data
+    return state
+
+
+def node_analyze_trends(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Analyzing keyword trends.")
+    if "target_keywords" in state:
+        data = analyze_trends_tool.invoke({"keywords": state["target_keywords"]})
+        state["trend_data"] = data
+    return state
+
+
+def node_retrieve_context(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Retrieving semantic RAG context.")
+    retriever = KnowledgeRetriever()
+    query = state.get("website_url", "Marketing strategy context")
+    context = retriever.retrieve_context(query)
+    state["rag_context"] = context
+    return state
+
+
+def node_generate_strategy(state: MarketingState) -> MarketingState:
+    logger.info("[Node] Generating final master strategy.")
+    if all(k in state for k in ["business_profile", "website_url", "competitors", "target_keywords"]):
+        data = generate_master_strategy_tool.invoke({
+            "business_profile_data": state["business_profile"].get("profile_data", {}),
+            "website_url": state["website_url"],
+            "competitor_urls": state["competitors"],
+            "keywords": state["target_keywords"]
+        })
+        
+        # Inject our RAG context manually into the strategy summary since the tool doesn't know about it yet
+        if "rag_context" in state and state["rag_context"]:
+            rag_info = " | RAG Context: " + ", ".join(state["rag_context"])
+            data["business_summary"] += rag_info
+            
+        state["marketing_strategy"] = data
+    return state
+
+
+# 3. Assemble Graph
+def build_marketing_graph():
+    """Build and compile the LangGraph state machine."""
+    logger.info("Assembling LangGraph workflow.")
+    
+    workflow = StateGraph(MarketingState)
+
+    # Add Nodes
+    workflow.add_node("questionnaire", node_process_questionnaire)
+    workflow.add_node("website", node_analyze_website)
+    workflow.add_node("competitors", node_analyze_competitors)
+    workflow.add_node("industry", node_analyze_industry)
+    workflow.add_node("keywords", node_analyze_keywords)
+    workflow.add_node("trends", node_analyze_trends)
+    workflow.add_node("rag", node_retrieve_context)
+    workflow.add_node("strategy", node_generate_strategy)
+
+    # Add Edges (Linear sequential flow for now)
+    workflow.add_edge(START, "questionnaire")
+    workflow.add_edge("questionnaire", "website")
+    workflow.add_edge("website", "competitors")
+    workflow.add_edge("competitors", "industry")
+    workflow.add_edge("industry", "keywords")
+    workflow.add_edge("keywords", "trends")
+    workflow.add_edge("trends", "rag")
+    workflow.add_edge("rag", "strategy")
+    workflow.add_edge("strategy", END)
+
+    # Compile
+    return workflow.compile()

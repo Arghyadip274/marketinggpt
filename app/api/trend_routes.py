@@ -4,17 +4,21 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.models.trend_models import TrendRequest, TrendResponse
-from app.tools.trend_analyzer import TrendAnalyzer, TrendAnalyzerError
+from app.services.trend_service import TrendService, TrendServiceError
 
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 router = APIRouter(tags=["trends"])
-trend_analyzer = TrendAnalyzer()
+
+
+def get_trend_service() -> TrendService:
+    """Dependency provider for TrendService."""
+    return TrendService()
 
 
 @router.post(
@@ -23,19 +27,21 @@ trend_analyzer = TrendAnalyzer()
     status_code=status.HTTP_200_OK,
     summary="Analyze keyword trends",
 )
-async def trend_analysis(request: TrendRequest) -> TrendResponse:
-    """Fetch and analyze Google Trends data for submitted keywords."""
+async def get_trends(
+    request: TrendRequest,
+    service: TrendService = Depends(get_trend_service),
+) -> TrendResponse:
+    """Fetch google trends data for a list of keywords."""
 
     logger.info("Analyzing trends for %d keywords", len(request.keywords))
 
     try:
-        analysis = trend_analyzer.fetch_google_trends(request.keywords)
-        response = TrendResponse(**analysis)
-    except TrendAnalyzerError as exc:
-        logger.warning("Trend provider failed: %s", exc)
+        response = service.analyze_trends(request.keywords)
+    except TrendServiceError as exc:
+        logger.warning("Trend analysis failed: %s", exc)
         raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail="Unable to fetch trend data",
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc),
         ) from exc
     except (TypeError, ValueError) as exc:
         logger.warning("Invalid trend analysis request or response: %s", exc)
