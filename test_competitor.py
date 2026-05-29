@@ -6,8 +6,9 @@ def main():
     
     # We use some generic stable domains for testing
     competitors = [
-        "https://example.com",
-        "https://www.w3.org"
+        "https://www.hubspot.com",
+        "https://www.salesforce.com",
+        "https://www.zoho.com"
     ]
     
     print(f"Testing competitor analysis for {len(competitors)} URLs...")
