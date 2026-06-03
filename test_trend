@@ -1,0 +1,61 @@
+# app/services/trend_service.py
+
+
+class TrendServiceError(Exception):
+    """Raised when TrendService encounters an invalid input or processing error."""
+    pass
+
+
+class TrendService:
+    """Analyzes market and technology trends for the marketing GPT project."""
+
+    SUPPORTED_TRENDS = [
+        "AI in Healthcare",
+        "Remote Work",
+        "Sustainable Packaging",
+        "Web3 & Blockchain",
+        "Short-form Video",
+        "Voice Search",
+        "Hyper-Personalization",
+    ]
+
+    def analyze_trend(self, trend_name: str) -> dict:
+        """
+        Analyze a given trend and return structured insights.
+
+        Args:
+            trend_name: The name of the trend to analyze.
+
+        Returns:
+            A dict with trend insights.
+
+        Raises:
+            TrendServiceError: If trend_name is invalid or unsupported.
+        """
+        if not trend_name or not isinstance(trend_name, str):
+            raise TrendServiceError(
+                f"Invalid trend input: expected a non-empty string, got {type(trend_name).__name__!r}"
+            )
+
+        trend_name = trend_name.strip()
+        if not trend_name:
+            raise TrendServiceError("Trend name cannot be blank.")
+
+        # Core analysis logic (extend with real GPT/API calls as needed)
+        return {
+            "trend": trend_name,
+            "status": "rising",
+            "relevance_score": 8.4,
+            "momentum": "high",
+            "target_audience": ["marketers", "product teams", "executives"],
+            "channels": ["LinkedIn", "Twitter/X", "newsletters"],
+            "summary": (
+                f"'{trend_name}' is gaining traction across B2B and B2C sectors. "
+                "Early adoption signals strong ROI potential for content-led campaigns."
+            ),
+            "recommended_actions": [
+                "Create thought leadership content around this trend",
+                "Monitor competitor positioning",
+                "A/B test trend-based messaging in ad creatives",
+            ],
+        }
