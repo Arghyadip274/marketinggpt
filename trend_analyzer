@@ -1,0 +1,27 @@
+import json
+from app.services.trend_service import TrendService, TrendServiceError
+
+
+def main():
+    service = TrendService()
+
+    valid_trend = "AI in Healthcare"
+    invalid_trend = None  # None instead of string
+
+    print("--- Testing Valid Trend Name ---")
+    try:
+        results = service.analyze_trend(valid_trend)
+        print(json.dumps(results, indent=2))
+    except Exception as e:
+        print(f"FAILED: {e}")
+
+    print("\n--- Testing Invalid Input (Error Handling) ---")
+    try:
+        service.analyze_trend(invalid_trend)  # type: ignore
+        print("FAILED: Expected TrendServiceError was not raised.")
+    except TrendServiceError as e:
+        print(f"SUCCESS: Caught expected service error -> {e}")
+
+
+if __name__ == "__main__":
+    main()
