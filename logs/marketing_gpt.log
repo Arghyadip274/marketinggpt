@@ -1,0 +1,504 @@
+2026-06-03 09:43:04,934 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 09:43:04,934 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 09:43:08,048 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 09:43:09,500 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 09:43:09,501 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 09:43:16,070 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 09:43:17,292 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 09:43:17,293 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 11:39:57,331 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:39:57,332 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 11:40:00,624 - INFO - [main] - GET / - HTTP 404 - 0.002s
+2026-06-03 11:40:00,838 - INFO - [main] - GET /favicon.ico - HTTP 404 - 0.001s
+2026-06-03 11:40:08,387 - INFO - [main] - GET / - HTTP 404 - 0.001s
+2026-06-03 11:40:14,225 - INFO - [main] - GET /docs - HTTP 200 - 0.000s
+2026-06-03 11:40:14,621 - INFO - [main] - GET /openapi.json - HTTP 200 - 0.056s
+2026-06-03 11:41:48,177 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 11:41:49,655 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:41:49,655 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 11:42:04,813 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:42:11,588 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 11:42:13,356 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:42:13,357 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 11:42:29,073 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:42:29,074 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 11:42:29,100 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 11:42:29,105 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 11:42:29,105 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 11:42:29,106 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 11:42:37,583 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 11:42:38,670 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:42:38,671 - INFO - [main] - Starting MarketingGPT API v0.1.0 in development mode
+2026-06-03 11:42:53,397 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:42:53,398 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 11:42:53,415 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 11:42:53,416 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 11:42:53,416 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 11:42:53,416 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 11:42:53,417 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing website.
+2026-06-03 11:42:53,418 - INFO - [app.chains.tools] - LangChain Tool executing website analysis for: https://example-saas.com
+2026-06-03 11:42:53,418 - INFO - [app.services.website_service] - Service received request to analyze website: https://example-saas.com
+2026-06-03 11:42:53,418 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://example-saas.com
+2026-06-03 11:42:55,421 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://example-saas.com with score: 60
+2026-06-03 11:42:55,421 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 60
+2026-06-03 11:42:55,422 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing competitors.
+2026-06-03 11:42:55,423 - INFO - [app.chains.tools] - LangChain Tool executing competitor analysis for 2 URLs.
+2026-06-03 11:42:55,423 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:42:55,423 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:42:55,750 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorA.com: HTTPSConnectionPool(host='competitora.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitora.com', port=443): Failed to resolve 'competitora.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:42:55,751 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorA.com, skipping.
+2026-06-03 11:42:56,071 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorB.com: HTTPSConnectionPool(host='competitorb.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitorb.com', port=443): Failed to resolve 'competitorb.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:42:56,071 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorB.com, skipping.
+2026-06-03 11:42:56,072 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:42:56,072 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Unknown
+2026-06-03 11:42:56,072 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing industry patterns.
+2026-06-03 11:42:56,073 - INFO - [app.chains.tools] - LangChain Tool executing industry analysis for: saas
+2026-06-03 11:42:56,073 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'saas'
+2026-06-03 11:42:56,073 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'saas' (normalized: 'saas')
+2026-06-03 11:42:56,073 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: saas
+2026-06-03 11:42:56,073 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Saas
+2026-06-03 11:42:56,074 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing and ranking keywords.
+2026-06-03 11:42:56,075 - INFO - [app.chains.tools] - LangChain Tool executing keyword analysis.
+2026-06-03 11:42:56,075 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:42:56,075 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:42:56,075 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:42:56,075 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing keyword trends.
+2026-06-03 11:42:56,076 - INFO - [app.chains.tools] - LangChain Tool executing trend analysis.
+2026-06-03 11:42:56,076 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:42:56,076 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:42:56,076 - WARNING - [app.tools.trend_analyzer] - pytrends unavailable, using mock trend data
+2026-06-03 11:42:56,077 - INFO - [app.tools.trend_analyzer] - Detected 2 rising keywords using threshold 20.00
+2026-06-03 11:42:56,077 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 11:42:56,078 - INFO - [app.workflows.marketing_workflow] - [Node] Retrieving semantic RAG context.
+2026-06-03 11:43:14,861 - INFO - [app.rag.embeddings] - Loading local sentence-transformers model: all-MiniLM-L6-v2
+2026-06-03 11:43:14,863 - INFO - [sentence_transformers.base.model] - No device provided, using cpu
+2026-06-03 11:43:17,630 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:17,631 - WARNING - [huggingface_hub.utils._http] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-03 11:43:18,088 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:18,546 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:19,262 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:19,265 - INFO - [sentence_transformers.base.model] - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-03 11:43:20,019 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:20,095 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:20,559 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:20,679 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-03 11:43:21,542 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:22,497 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:22,871 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:22,987 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:23,310 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:23,673 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:23,767 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:24,306 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:24,634 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:24,946 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:25,241 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:25,522 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:25,602 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:25,972 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:26,055 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:26,333 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:26,398 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:26,848 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:26,919 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:27,204 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-03 11:43:27,501 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-03 11:43:27,889 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:43:27,962 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-03 11:43:28,256 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-03 11:43:28,269 - INFO - [app.rag.retriever] - Initializing ChromaDB persistent client at: app\rag\vector_store
+2026-06-03 11:43:29,037 - INFO - [app.rag.retriever] - ChromaDB vector store successfully initialized.
+2026-06-03 11:43:29,037 - INFO - [app.rag.retriever] - Searching vector store for query: 'https://example-saas.com', top_k=4, filter=None
+2026-06-03 11:43:29,280 - INFO - [app.workflows.marketing_workflow] - [Node] Generating final master strategy.
+2026-06-03 11:43:29,281 - INFO - [app.chains.tools] - LangChain Tool generating master strategy for: https://example-saas.com
+2026-06-03 11:43:29,281 - INFO - [app.services.strategy_service] - Starting strategy generation for https://example-saas.com
+2026-06-03 11:43:29,281 - INFO - [app.services.website_service] - Service received request to analyze website: https://example-saas.com
+2026-06-03 11:43:29,281 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://example-saas.com
+2026-06-03 11:43:30,646 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://example-saas.com with score: 60
+2026-06-03 11:43:30,646 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 60
+2026-06-03 11:43:30,647 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:43:30,647 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:43:30,823 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorA.com: HTTPSConnectionPool(host='competitora.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitora.com', port=443): Failed to resolve 'competitora.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:43:30,823 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorA.com, skipping.
+2026-06-03 11:43:31,114 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorB.com: HTTPSConnectionPool(host='competitorb.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitorb.com', port=443): Failed to resolve 'competitorb.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:43:31,114 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorB.com, skipping.
+2026-06-03 11:43:31,114 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:43:31,114 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Unknown
+2026-06-03 11:43:31,114 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'saas'
+2026-06-03 11:43:31,114 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'saas' (normalized: 'saas')
+2026-06-03 11:43:31,115 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: saas
+2026-06-03 11:43:31,115 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Saas
+2026-06-03 11:43:31,115 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:43:31,115 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:43:31,115 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:43:31,115 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:43:31,115 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:43:31,115 - WARNING - [app.tools.trend_analyzer] - pytrends unavailable, using mock trend data
+2026-06-03 11:43:31,115 - INFO - [app.tools.trend_analyzer] - Detected 2 rising keywords using threshold 20.00
+2026-06-03 11:43:31,116 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 11:44:11,616 - INFO - [main] - Shutting down MarketingGPT API
+2026-06-03 11:44:16,435 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:44:16,435 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 11:44:16,448 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 11:44:16,449 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 11:44:16,449 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 11:44:16,449 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 11:44:16,450 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing website.
+2026-06-03 11:44:16,451 - INFO - [app.chains.tools] - LangChain Tool executing website analysis for: https://example-saas.com
+2026-06-03 11:44:16,451 - INFO - [app.services.website_service] - Service received request to analyze website: https://example-saas.com
+2026-06-03 11:44:16,451 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://example-saas.com
+2026-06-03 11:44:17,774 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://example-saas.com with score: 60
+2026-06-03 11:44:17,774 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 60
+2026-06-03 11:44:17,775 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing competitors.
+2026-06-03 11:44:17,776 - INFO - [app.chains.tools] - LangChain Tool executing competitor analysis for 2 URLs.
+2026-06-03 11:44:17,776 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:44:17,776 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:44:17,947 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorA.com: HTTPSConnectionPool(host='competitora.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitora.com', port=443): Failed to resolve 'competitora.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:44:17,948 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorA.com, skipping.
+2026-06-03 11:44:18,119 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorB.com: HTTPSConnectionPool(host='competitorb.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitorb.com', port=443): Failed to resolve 'competitorb.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:44:18,119 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorB.com, skipping.
+2026-06-03 11:44:18,119 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:44:18,119 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Unknown
+2026-06-03 11:44:18,120 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing industry patterns.
+2026-06-03 11:44:18,121 - INFO - [app.chains.tools] - LangChain Tool executing industry analysis for: saas
+2026-06-03 11:44:18,121 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'saas'
+2026-06-03 11:44:18,121 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'saas' (normalized: 'saas')
+2026-06-03 11:44:18,121 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: saas
+2026-06-03 11:44:18,121 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Saas
+2026-06-03 11:44:18,122 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing and ranking keywords.
+2026-06-03 11:44:18,122 - INFO - [app.chains.tools] - LangChain Tool executing keyword analysis.
+2026-06-03 11:44:18,122 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:44:18,123 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:44:18,123 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:44:18,123 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing keyword trends.
+2026-06-03 11:44:18,124 - INFO - [app.chains.tools] - LangChain Tool executing trend analysis.
+2026-06-03 11:44:18,124 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:44:18,124 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:44:18,124 - WARNING - [app.tools.trend_analyzer] - pytrends unavailable, using mock trend data
+2026-06-03 11:44:18,125 - INFO - [app.tools.trend_analyzer] - Detected 2 rising keywords using threshold 20.00
+2026-06-03 11:44:18,125 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 11:44:18,126 - INFO - [app.workflows.marketing_workflow] - [Node] Retrieving semantic RAG context.
+2026-06-03 11:44:26,163 - INFO - [app.rag.embeddings] - Loading local sentence-transformers model: all-MiniLM-L6-v2
+2026-06-03 11:44:26,164 - INFO - [sentence_transformers.base.model] - No device provided, using cpu
+2026-06-03 11:44:26,917 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:26,976 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:27,258 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:27,304 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:27,306 - INFO - [sentence_transformers.base.model] - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-03 11:44:27,597 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:27,597 - WARNING - [huggingface_hub.utils._http] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-03 11:44:27,645 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:27,910 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:27,959 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-03 11:44:28,224 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:28,270 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:28,546 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:28,597 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:28,995 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:29,277 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:29,327 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:29,713 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:29,991 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:30,265 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:30,549 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:30,815 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:30,885 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:31,157 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:31,203 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:31,496 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:31,544 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:31,809 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:31,855 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:32,149 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-03 11:44:32,417 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-03 11:44:32,726 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:44:32,772 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-03 11:44:33,046 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-03 11:44:33,052 - INFO - [app.rag.retriever] - Initializing ChromaDB persistent client at: app\rag\vector_store
+2026-06-03 11:44:33,130 - INFO - [app.rag.retriever] - ChromaDB vector store successfully initialized.
+2026-06-03 11:44:33,131 - INFO - [app.rag.retriever] - Searching vector store for query: 'https://example-saas.com', top_k=4, filter=None
+2026-06-03 11:44:33,158 - INFO - [app.workflows.marketing_workflow] - [Node] Generating final master strategy.
+2026-06-03 11:44:33,159 - INFO - [app.chains.tools] - LangChain Tool generating master strategy for: https://example-saas.com
+2026-06-03 11:44:33,159 - INFO - [app.services.strategy_service] - Starting strategy generation for https://example-saas.com
+2026-06-03 11:44:33,159 - INFO - [app.services.website_service] - Service received request to analyze website: https://example-saas.com
+2026-06-03 11:44:33,159 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://example-saas.com
+2026-06-03 11:44:34,502 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://example-saas.com with score: 60
+2026-06-03 11:44:34,503 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 60
+2026-06-03 11:44:34,503 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:44:34,503 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:44:34,675 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorA.com: HTTPSConnectionPool(host='competitora.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitora.com', port=443): Failed to resolve 'competitora.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:44:34,676 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorA.com, skipping.
+2026-06-03 11:44:34,846 - ERROR - [app.tools.website_analyzer] - Failed to fetch HTML for https://competitorB.com: HTTPSConnectionPool(host='competitorb.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='competitorb.com', port=443): Failed to resolve 'competitorb.com' ([Errno 11001] getaddrinfo failed)"))
+2026-06-03 11:44:34,846 - WARNING - [app.tools.competitor_analyzer] - Failed to fetch HTML for https://competitorB.com, skipping.
+2026-06-03 11:44:34,847 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:44:34,847 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Unknown
+2026-06-03 11:44:34,847 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'saas'
+2026-06-03 11:44:34,847 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'saas' (normalized: 'saas')
+2026-06-03 11:44:34,847 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: saas
+2026-06-03 11:44:34,847 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Saas
+2026-06-03 11:44:34,847 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:44:34,847 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:44:34,847 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:44:34,847 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:44:34,848 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:44:34,848 - WARNING - [app.tools.trend_analyzer] - pytrends unavailable, using mock trend data
+2026-06-03 11:44:34,848 - INFO - [app.tools.trend_analyzer] - Detected 2 rising keywords using threshold 20.00
+2026-06-03 11:44:34,848 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 11:50:52,270 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 11:50:52,271 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 11:50:52,288 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 11:50:52,291 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 11:50:52,291 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 11:50:52,292 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 11:50:52,293 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing website.
+2026-06-03 11:50:52,294 - INFO - [app.chains.tools] - LangChain Tool executing website analysis for: https://www.hubspot.com/
+2026-06-03 11:50:52,294 - INFO - [app.services.website_service] - Service received request to analyze website: https://www.hubspot.com/
+2026-06-03 11:50:52,294 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://www.hubspot.com/
+2026-06-03 11:50:54,499 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://www.hubspot.com/ with score: 100
+2026-06-03 11:50:54,499 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 100
+2026-06-03 11:50:54,500 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing competitors.
+2026-06-03 11:50:54,501 - INFO - [app.chains.tools] - LangChain Tool executing competitor analysis for 2 URLs.
+2026-06-03 11:50:54,501 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:50:54,501 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:50:56,197 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:50:56,198 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Product-Led Growth (Self-serve focus)
+2026-06-03 11:50:56,199 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing industry patterns.
+2026-06-03 11:50:56,199 - INFO - [app.chains.tools] - LangChain Tool executing industry analysis for: generic
+2026-06-03 11:50:56,199 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'generic'
+2026-06-03 11:50:56,200 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'generic' (normalized: 'generic')
+2026-06-03 11:50:56,200 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: generic
+2026-06-03 11:50:56,200 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Generic
+2026-06-03 11:50:56,201 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing and ranking keywords.
+2026-06-03 11:50:56,201 - INFO - [app.chains.tools] - LangChain Tool executing keyword analysis.
+2026-06-03 11:50:56,201 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:50:56,202 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:50:56,202 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:50:56,202 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing keyword trends.
+2026-06-03 11:50:56,203 - INFO - [app.chains.tools] - LangChain Tool executing trend analysis.
+2026-06-03 11:50:56,203 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:50:56,203 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:50:58,712 - INFO - [app.tools.trend_analyzer] - Detected 1 rising keywords using threshold 20.00
+2026-06-03 11:50:58,712 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 11:50:58,713 - INFO - [app.workflows.marketing_workflow] - [Node] Retrieving semantic RAG context.
+2026-06-03 11:51:07,672 - INFO - [app.rag.embeddings] - Loading local sentence-transformers model: all-MiniLM-L6-v2
+2026-06-03 11:51:07,674 - INFO - [sentence_transformers.base.model] - No device provided, using cpu
+2026-06-03 11:51:08,391 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:08,392 - WARNING - [huggingface_hub.utils._http] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-03 11:51:08,456 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:08,740 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:08,793 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:08,795 - INFO - [sentence_transformers.base.model] - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-03 11:51:09,078 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:09,124 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:09,409 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:09,456 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-03 11:51:09,725 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:09,782 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:10,053 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:10,108 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:10,395 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:10,717 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:10,765 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:11,239 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:11,527 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:11,791 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:12,079 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:12,351 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:12,397 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:12,670 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:12,717 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:12,983 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:13,038 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:13,321 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:13,368 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:13,670 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-03 11:51:13,953 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-03 11:51:14,305 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 11:51:14,352 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-03 11:51:14,637 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-03 11:51:14,646 - INFO - [app.rag.retriever] - Initializing ChromaDB persistent client at: app\rag\vector_store
+2026-06-03 11:51:14,871 - INFO - [app.rag.retriever] - ChromaDB vector store successfully initialized.
+2026-06-03 11:51:14,871 - INFO - [app.rag.retriever] - Searching vector store for query: 'https://www.hubspot.com/', top_k=4, filter=None
+2026-06-03 11:51:15,096 - INFO - [app.workflows.marketing_workflow] - [Node] Generating final master strategy.
+2026-06-03 11:51:15,097 - INFO - [app.chains.tools] - LangChain Tool generating master strategy for: https://www.hubspot.com/
+2026-06-03 11:51:15,098 - INFO - [app.services.strategy_service] - Starting strategy generation for https://www.hubspot.com/
+2026-06-03 11:51:15,098 - INFO - [app.services.website_service] - Service received request to analyze website: https://www.hubspot.com/
+2026-06-03 11:51:15,098 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://www.hubspot.com/
+2026-06-03 11:51:16,676 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://www.hubspot.com/ with score: 100
+2026-06-03 11:51:16,676 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 100
+2026-06-03 11:51:16,677 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 11:51:16,677 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 11:51:18,080 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 11:51:18,080 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Product-Led Growth (Self-serve focus)
+2026-06-03 11:51:18,081 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'generic'
+2026-06-03 11:51:18,081 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'generic' (normalized: 'generic')
+2026-06-03 11:51:18,081 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: generic
+2026-06-03 11:51:18,081 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Generic
+2026-06-03 11:51:18,081 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 11:51:18,081 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 11:51:18,082 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 11:51:18,082 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 11:51:18,082 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 11:51:20,267 - INFO - [app.tools.trend_analyzer] - Detected 1 rising keywords using threshold 20.00
+2026-06-03 11:51:20,267 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 12:24:07,912 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 12:24:07,913 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 12:24:07,936 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 12:24:07,937 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 12:24:07,937 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 12:24:07,938 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 12:24:07,939 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing website.
+2026-06-03 12:24:07,940 - INFO - [app.chains.tools] - LangChain Tool executing website analysis for: https://www.hubspot.com/
+2026-06-03 12:24:07,940 - INFO - [app.services.website_service] - Service received request to analyze website: https://www.hubspot.com/
+2026-06-03 12:24:07,940 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://www.hubspot.com/
+2026-06-03 12:24:10,202 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://www.hubspot.com/ with score: 100
+2026-06-03 12:24:10,203 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 100
+2026-06-03 12:24:10,204 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing competitors.
+2026-06-03 12:24:10,205 - INFO - [app.chains.tools] - LangChain Tool executing competitor analysis for 2 URLs.
+2026-06-03 12:24:10,205 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 12:24:10,205 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 12:24:11,673 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 12:24:11,674 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Product-Led Growth (Self-serve focus)
+2026-06-03 12:24:11,675 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing industry patterns.
+2026-06-03 12:24:11,676 - INFO - [app.chains.tools] - LangChain Tool executing industry analysis for: generic
+2026-06-03 12:24:11,676 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'generic'
+2026-06-03 12:24:11,677 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'generic' (normalized: 'generic')
+2026-06-03 12:24:11,677 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: generic
+2026-06-03 12:24:11,677 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Generic
+2026-06-03 12:24:11,677 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing and ranking keywords.
+2026-06-03 12:24:11,678 - INFO - [app.chains.tools] - LangChain Tool executing keyword analysis.
+2026-06-03 12:24:11,678 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 12:24:11,678 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 12:24:11,678 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 12:24:11,679 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing keyword trends.
+2026-06-03 12:24:11,679 - INFO - [app.chains.tools] - LangChain Tool executing trend analysis.
+2026-06-03 12:24:11,679 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 12:24:11,679 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 12:24:14,301 - INFO - [app.tools.trend_analyzer] - Detected 1 rising keywords using threshold 20.00
+2026-06-03 12:24:14,301 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 12:24:14,302 - INFO - [app.workflows.marketing_workflow] - [Node] Retrieving semantic RAG context.
+2026-06-03 12:24:20,567 - INFO - [app.rag.embeddings] - Loading local sentence-transformers model: all-MiniLM-L6-v2
+2026-06-03 12:24:20,568 - INFO - [sentence_transformers.base.model] - No device provided, using cpu
+2026-06-03 12:24:21,315 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:21,315 - WARNING - [huggingface_hub.utils._http] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-03 12:24:21,358 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:21,640 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:21,689 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:21,691 - INFO - [sentence_transformers.base.model] - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-03 12:24:21,957 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:22,000 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:22,258 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:22,303 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-03 12:24:22,843 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:22,890 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:23,155 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:23,200 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:23,462 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:23,733 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:23,777 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:24,497 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:24,757 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:25,015 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:25,306 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:25,570 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:25,630 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:25,923 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:25,973 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:26,251 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:26,295 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:26,554 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:26,598 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:26,862 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:27,138 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-03 12:24:27,497 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:24:27,548 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-03 12:24:27,816 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-03 12:24:27,830 - INFO - [app.rag.retriever] - Initializing ChromaDB persistent client at: app\rag\vector_store
+2026-06-03 12:24:28,091 - INFO - [app.rag.retriever] - ChromaDB vector store successfully initialized.
+2026-06-03 12:24:28,091 - INFO - [app.rag.retriever] - Searching vector store for query: 'https://www.hubspot.com/', top_k=4, filter=None
+2026-06-03 12:24:28,334 - INFO - [app.workflows.marketing_workflow] - [Node] Generating final master strategy.
+2026-06-03 12:24:29,610 - INFO - [app.workflows.marketing_workflow] - Google API Key detected. Engaging Gemini Live Generation!
+2026-06-03 12:24:30,487 - INFO - [app.prompts.personality_manager] - PersonalityManager successfully initialized.
+2026-06-03 12:24:30,494 - INFO - [google_genai.models] - AFC is enabled with max remote calls: 10.
+2026-06-03 12:24:30,908 - INFO - [httpx] - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-06-03 12:24:30,909 - ERROR - [app.workflows.marketing_workflow] - Gemini generation failed: Error calling model 'gemini-1.5-flash' (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-03 12:44:52,654 - INFO - [app] - Centralized logging configured successfully (Level: INFO)
+2026-06-03 12:44:52,655 - INFO - [app.workflows.marketing_workflow] - Assembling LangGraph workflow.
+2026-06-03 12:44:52,685 - INFO - [app.workflows.marketing_workflow] - [Node] Processing questionnaire.
+2026-06-03 12:44:52,688 - INFO - [app.chains.tools] - LangChain Tool processing questionnaire answers.
+2026-06-03 12:44:52,688 - WARNING - [app.services.questionnaire_service] - Submission missing 169 required answers.
+2026-06-03 12:44:52,689 - WARNING - [app.workflows.marketing_workflow] - Failed to process questionnaire (likely missing required fields): Missing required answers for: How can I grow my brand with a limited marketing budget?, What marketing strategy should I use for my business?, Which marketing channels are best for my industry?.... Falling back to default profile.
+2026-06-03 12:44:52,690 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing website.
+2026-06-03 12:44:52,691 - INFO - [app.chains.tools] - LangChain Tool executing website analysis for: https://www.hubspot.com/
+2026-06-03 12:44:52,691 - INFO - [app.services.website_service] - Service received request to analyze website: https://www.hubspot.com/
+2026-06-03 12:44:52,691 - INFO - [app.tools.website_analyzer] - Starting SEO analysis for URL: https://www.hubspot.com/
+2026-06-03 12:44:54,675 - INFO - [app.tools.website_analyzer] - Completed SEO analysis for URL: https://www.hubspot.com/ with score: 100
+2026-06-03 12:44:54,675 - INFO - [app.services.website_service] - Service successfully analyzed website, achieved SEO score: 100
+2026-06-03 12:44:54,677 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing competitors.
+2026-06-03 12:44:54,678 - INFO - [app.chains.tools] - LangChain Tool executing competitor analysis for 2 URLs.
+2026-06-03 12:44:54,678 - INFO - [app.services.competitor_service] - Service received request to analyze 2 competitors
+2026-06-03 12:44:54,678 - INFO - [app.tools.competitor_analyzer] - Starting competitor analysis for 2 URLs
+2026-06-03 12:44:56,174 - INFO - [app.tools.competitor_analyzer] - Successfully generated competitor intelligence report.
+2026-06-03 12:44:56,174 - INFO - [app.services.competitor_service] - Service successfully analyzed competitors, dominant strategy: Product-Led Growth (Self-serve focus)
+2026-06-03 12:44:56,175 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing industry patterns.
+2026-06-03 12:44:56,176 - INFO - [app.chains.tools] - LangChain Tool executing industry analysis for: generic
+2026-06-03 12:44:56,177 - INFO - [app.services.industry_service] - Service received request to analyze industry: 'generic'
+2026-06-03 12:44:56,177 - INFO - [app.tools.industry_analyzer] - Analyzing industry: 'generic' (normalized: 'generic')
+2026-06-03 12:44:56,177 - INFO - [app.tools.industry_analyzer] - Successfully matched industry to knowledge base key: generic
+2026-06-03 12:44:56,177 - INFO - [app.services.industry_service] - Service successfully analyzed industry, mapped to: Generic
+2026-06-03 12:44:56,178 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing and ranking keywords.
+2026-06-03 12:44:56,178 - INFO - [app.chains.tools] - LangChain Tool executing keyword analysis.
+2026-06-03 12:44:56,178 - INFO - [app.services.keyword_service] - Service received request to analyze 2 keywords
+2026-06-03 12:44:56,179 - INFO - [app.tools.keyword_detector] - Ranked 2 keyword opportunities
+2026-06-03 12:44:56,179 - INFO - [app.services.keyword_service] - Service successfully ranked 2 keywords
+2026-06-03 12:44:56,179 - INFO - [app.workflows.marketing_workflow] - [Node] Analyzing keyword trends.
+2026-06-03 12:44:56,180 - INFO - [app.chains.tools] - LangChain Tool executing trend analysis.
+2026-06-03 12:44:56,180 - INFO - [app.services.trend_service] - Service received request to analyze trends for 2 keywords
+2026-06-03 12:44:56,180 - INFO - [app.tools.trend_analyzer] - Fetching Google Trends data for 2 keywords
+2026-06-03 12:44:58,742 - INFO - [app.tools.trend_analyzer] - Detected 1 rising keywords using threshold 20.00
+2026-06-03 12:44:58,743 - INFO - [app.services.trend_service] - Service successfully analyzed trends for 2 keywords
+2026-06-03 12:44:58,744 - INFO - [app.workflows.marketing_workflow] - [Node] Retrieving semantic RAG context.
+2026-06-03 12:45:03,666 - INFO - [app.rag.embeddings] - Loading local sentence-transformers model: all-MiniLM-L6-v2
+2026-06-03 12:45:03,668 - INFO - [sentence_transformers.base.model] - No device provided, using cpu
+2026-06-03 12:45:04,393 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:04,394 - WARNING - [huggingface_hub.utils._http] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-03 12:45:04,440 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:04,700 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:04,745 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:04,747 - INFO - [sentence_transformers.base.model] - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-03 12:45:05,026 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:05,083 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:05,352 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:05,414 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-03 12:45:05,929 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:05,974 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:06,252 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:06,321 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:06,611 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:06,879 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:06,925 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:07,327 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:07,612 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:07,881 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:08,163 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:08,423 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:08,469 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:08,751 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:08,796 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:09,073 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:09,129 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:09,401 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:09,466 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:09,767 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-03 12:45:10,029 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-03 12:45:10,361 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-03 12:45:10,406 - INFO - [httpx] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-03 12:45:10,670 - INFO - [httpx] - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-03 12:45:10,677 - INFO - [app.rag.retriever] - Initializing ChromaDB persistent client at: app\rag\vector_store
+2026-06-03 12:45:10,770 - INFO - [app.rag.retriever] - ChromaDB vector store successfully initialized.
+2026-06-03 12:45:10,770 - INFO - [app.rag.retriever] - Searching vector store for query: 'https://www.hubspot.com/', top_k=4, filter=None
+2026-06-03 12:45:10,907 - INFO - [app.workflows.marketing_workflow] - [Node] Generating final master strategy.
+2026-06-03 12:45:12,122 - INFO - [app.workflows.marketing_workflow] - Google API Key detected. Engaging Gemini Live Generation!
+2026-06-03 12:45:12,795 - INFO - [app.prompts.personality_manager] - PersonalityManager successfully initialized.
+2026-06-03 12:45:12,800 - INFO - [google_genai.models] - AFC is enabled with max remote calls: 10.
+2026-06-03 12:45:29,719 - INFO - [httpx] - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"

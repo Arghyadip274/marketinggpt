@@ -17,6 +17,8 @@ from app.chains.tools import (
     generate_master_strategy_tool,
 )
 from app.rag.retriever import KnowledgeRetriever
+from app.prompts.personality_manager import PersonalityManager
+import os
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
@@ -39,6 +41,9 @@ class MarketingState(TypedDict, total=False):
     industry_data: dict[str, Any]
     ranked_keywords: list[dict[str, Any]]
     trend_data: dict[str, Any]
+    
+    # Conversation History
+    chat_history: list[Any]
     
     # RAG Context
     rag_context: list[str]
@@ -133,6 +138,47 @@ def node_retrieve_context(state: MarketingState) -> MarketingState:
 
 def node_generate_strategy(state: MarketingState) -> MarketingState:
     logger.info("[Node] Generating final master strategy.")
+    
+    # 1. Try Live Gemini LLM Integration
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if api_key and all(k in state for k in ["business_profile", "website_url", "competitors", "target_keywords"]):
+        try:
+            from langchain_google_genai import ChatGoogleGenerativeAI
+            
+            logger.info("Google API Key detected. Engaging Gemini Live Generation!")
+            llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", google_api_key=api_key)
+            
+            manager = PersonalityManager()
+            prompt_template = manager.get_strategy_prompt_template()
+            
+            rag_context = "\n".join(state.get("rag_context", []))
+            business_profile_str = str(state["business_profile"].get("profile_data", {}))
+            keyword_data_str = str(state.get("ranked_keywords", state["target_keywords"]))
+            competitor_data_str = str(state.get("competitor_data", state["competitors"]))
+            
+            chain = prompt_template | llm
+            response = chain.invoke({
+                "business_profile": business_profile_str,
+                "keyword_data": keyword_data_str,
+                "competitor_data": competitor_data_str,
+                "rag_context": rag_context,
+                "chat_history": state.get("chat_history", [])
+            })
+            
+            strategy_content = response.content
+            if isinstance(strategy_content, list):
+                # Langchain might return a list of content blocks for newer models
+                strategy_content = "".join(block.get("text", "") for block in strategy_content if isinstance(block, dict))
+                
+            state["marketing_strategy"] = strategy_content
+            return state
+            
+        except Exception as e:
+            logger.error("Gemini generation failed: %s", e)
+            raise ValueError(f"Gemini API Error: {str(e)}. Please check your API key and try again.") from e
+            
+    # 2. Fallback to Mock Strategy Generator (only runs if no API key is provided)
+    logger.info("No API Key detected. Falling back to structured mock data.")
     if all(k in state for k in ["business_profile", "website_url", "competitors", "target_keywords"]):
         data = generate_master_strategy_tool.invoke({
             "business_profile_data": state["business_profile"].get("profile_data", {}),
@@ -141,7 +187,6 @@ def node_generate_strategy(state: MarketingState) -> MarketingState:
             "keywords": state["target_keywords"]
         })
         
-        # Inject our RAG context manually into the strategy summary since the tool doesn't know about it yet
         if "rag_context" in state and state["rag_context"]:
             rag_info = " | RAG Context: " + ", ".join(state["rag_context"])
             data["business_summary"] += rag_info

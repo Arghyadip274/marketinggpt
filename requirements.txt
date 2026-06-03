@@ -32,3 +32,10 @@ websockets==16.0
 python-docx
 langchain-core
 langgraph
+pydantic-settings
+python-dotenv
+pytest-cov
+chromadb
+sentence-transformers
+pypdf
+langchain-text-splitters
