@@ -25,6 +25,7 @@ class Settings(BaseSettings):
 
     # API Settings
     api_v1_prefix: str = "/api"
+    google_api_key: str | None = Field(default=None, description="Google Gemini API Key")
     
     # Security/CORS
     cors_origins: list[str] = Field(

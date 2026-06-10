@@ -1,9 +1,18 @@
 """FastAPI application entrypoint for MarketingGPT."""
 
 from __future__ import annotations
-
+import os
 import logging
 import time
+
+# Force load key from .env to bypass caching (same as frontend fix)
+env_path = os.path.join(os.path.dirname(__file__), ".env")
+if os.path.exists(env_path):
+    with open(env_path, "r") as f:
+        for line in f:
+            if line.startswith("GOOGLE_API_KEY="):
+                os.environ["GOOGLE_API_KEY"] = line.split("=")[1].strip().strip('"').strip("'")
+
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
@@ -24,6 +33,8 @@ from app.api.industry_routes import router as industry_router
 from app.api.questionnaire_routes import router as questionnaire_router
 from app.api.strategy_routes import router as strategy_router
 from app.api.health_routes import router as health_router
+from app.api.chat_routes import router as chat_router
+from app.api.rag_routes import router as rag_router
 
 
 logger = logging.getLogger(__name__)
@@ -55,10 +66,10 @@ def create_app() -> FastAPI:
     # CORS Middleware
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=settings.cors_origins,
-        allow_credentials="*" not in settings.cors_origins,
-        allow_methods=["GET", "POST", "OPTIONS"],
-        allow_headers=["Authorization", "Content-Type"],
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
 
     # Request Logging Middleware
@@ -77,6 +88,11 @@ def create_app() -> FastAPI:
         return response
 
     # Include API Routers
+    from app.api.chat_routes import router as chat_router
+    from app.api.rag_routes import router as rag_router
+    application.include_router(chat_router)
+    application.include_router(rag_router)
+    
     application.include_router(health_router)
     application.include_router(keyword_router)
     application.include_router(trend_router)

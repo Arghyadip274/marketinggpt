@@ -6,20 +6,79 @@ from app.workflows.marketing_workflow import build_marketing_graph
 from app.agents.extractor import extract_company_info
 
 # Configure page
-st.set_page_config(page_title="MarketingGPT Prototype", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="MarketingGPT Prototype", page_icon="🤖", layout="wide", initial_sidebar_state="expanded")
 
 st.title("🤖 MarketingGPT Prototype")
 st.markdown("Welcome to the entry-level frontend for MarketingGPT. Describe your business in the chat below to generate a strategy.")
 
+# --- INJECT PREMIUM CSS ---
+css_path = os.path.join(os.path.dirname(__file__), "app", "static", "styles.css")
+if os.path.exists(css_path):
+    with open(css_path, "r", encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # --- CONFIGURATION ---
+import os
 from dotenv import load_dotenv
-load_dotenv() # Load the API key from a .env file instead
+load_dotenv(override=True) # Load the API key from a .env file and override old env vars
+
+# Forcefully bypass Windows environment caching by reading the .env file directly
+env_path = os.path.join(os.path.dirname(__file__), ".env")
+if os.path.exists(env_path):
+    with open(env_path, "r") as f:
+        for line in f:
+            if line.startswith("GOOGLE_API_KEY="):
+                os.environ["GOOGLE_API_KEY"] = line.split("=")[1].strip().strip('"').strip("'")
 # -------------------------------
 
+# --- SIDEBAR PERSONALITY SELECTOR ---
+from app.prompts.personality_manager import PersonalityManager
+st.sidebar.header("🎭 Choose Persona")
+
+# Dynamically load personas directly from personalities.json using absolute path
+json_path = os.path.join(os.path.dirname(__file__), "app", "prompts", "personalities.json")
+persona_options = []
+if os.path.exists(json_path):
+    try:
+        import json
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            persona_options = list(data.keys())
+    except Exception as e:
+        st.sidebar.error(f"Error loading personalities: {e}")
+
+if not persona_options:
+    persona_options = [
+        "COMMIT (The Friendly Expert)",
+        "MarketingGPT (The Original)",
+        "Steve (The Visionary)",
+        "DataDan (The Analytical Quant)",
+        "SavageSales (The Aggressive Closer)"
+    ]
+
+# Track persona changes to reset chat
+if "active_persona" not in st.session_state:
+    st.session_state.active_persona = persona_options[0]
+
+try:
+    default_idx = persona_options.index(st.session_state.active_persona)
+except ValueError:
+    default_idx = 0
+    st.session_state.active_persona = persona_options[0]
+
+selected_persona = st.sidebar.selectbox("Active Persona", persona_options, index=default_idx)
+
+if selected_persona != st.session_state.active_persona:
+    st.session_state.active_persona = selected_persona
+    st.session_state.workflow_completed = False
+    # Clear messages on persona change
+    st.session_state.messages = []
+
 # 2. Chat Interface Initialization
-if "messages" not in st.session_state:
+if "messages" not in st.session_state or len(st.session_state.messages) == 0:
+    manager = PersonalityManager(st.session_state.active_persona)
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hello! I am MarketingGPT. Please describe your main product and your target audience in the chat below. I'll figure out your website and competitors automatically!"}
+        {"role": "assistant", "content": manager.get_greeting()}
     ]
 
 # Keep track of whether the heavy analysis is done
@@ -76,7 +135,8 @@ if user_input := st.chat_input("E.g., My product is Parle G..."):
                     "website_url": extraction.website_url or "https://example.com",
                     "competitors": extraction.competitors or [],
                     "target_keywords": extraction.target_keywords or [],
-                    "chat_history": chat_history
+                    "chat_history": chat_history,
+                    "active_persona": st.session_state.active_persona
                 }
                 
                 # Run Workflow
@@ -122,10 +182,10 @@ if user_input := st.chat_input("E.g., My product is Parle G..."):
                 from app.prompts.personality_manager import PersonalityManager
                 
                 api_key = os.environ.get("GOOGLE_API_KEY")
-                llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", google_api_key=api_key)
+                llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", google_api_key=api_key)
                 
                 # Build a simple follow-up prompt
-                manager = PersonalityManager()
+                manager = PersonalityManager(st.session_state.active_persona)
                 prompt_template = manager.get_strategy_prompt_template()
                 
                 state = st.session_state.final_state

@@ -21,8 +21,8 @@ def extract_company_info(chat_history: list, current_input: str) -> CompanyExtra
     if not api_key:
         raise ValueError("GOOGLE_API_KEY is missing. Cannot extract company info.")
         
-    # We use gemini-3.5-flash as we discovered earlier that it is available on this advanced key
-    llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", google_api_key=api_key)
+    # We use gemini-3.1-flash-lite as requested
+    llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", google_api_key=api_key)
     structured_llm = llm.with_structured_output(CompanyExtraction)
     
     prompt = ChatPromptTemplate.from_messages([

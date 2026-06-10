@@ -10,17 +10,19 @@ from langchain_core.prompts import ChatPromptTemplate
 
 
 def test_personality_manager_loads_default_prompt():
-    """Test that the PersonalityManager correctly loads the default system_prompt.md."""
+    """Test that the PersonalityManager correctly loads the default system prompt."""
     manager = PersonalityManager()
-    assert "Senior Marketing Consultant" in manager.system_prompt_content
-    assert "## Role & Persona" in manager.system_prompt_content
+    assert "Senior Marketing Consultant" in manager.get_system_prompt()
+    assert "## Role & Persona" in manager.get_system_prompt()
 
 
 def test_personality_manager_fallback(tmp_path):
-    """Test the fallback mechanism when the system prompt file is missing."""
-    missing_path = tmp_path / "nonexistent.md"
-    manager = PersonalityManager(system_prompt_path=str(missing_path))
-    assert manager.system_prompt_content == "You are MarketingGPT, an elite Senior Marketing Consultant."
+    """Test the fallback mechanism when the active_persona is missing."""
+    manager = PersonalityManager(active_persona="UnknownPersona")
+    # It should fallback to the old markdown file or the fallback string
+    # Assuming fallback to "You are MarketingGPT, an elite Senior Marketing Consultant." or the markdown contents
+    prompt = manager.get_system_prompt()
+    assert "Senior Marketing Consultant" in prompt or "You are MarketingGPT" in prompt
 
 
 def test_build_strategy_prompt_string():

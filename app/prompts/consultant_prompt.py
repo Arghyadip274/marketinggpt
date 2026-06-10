@@ -23,6 +23,18 @@ Please generate a comprehensive marketing strategy based on the following intell
 {rag_context}
 
 Based on your expertise as a Senior Marketing Consultant, provide a detailed action plan and strategic recommendations. Remember to explain your reasoning clearly and structure your output for readability.
+
+CRITICAL INSTRUCTION FOR DATA VISUALIZATION:
+If you want to display numerical data comparisons (like keyword search volumes or competitor metrics), you MUST output a JSON array of objects inside a ```recharts``` code block so the UI can render an interactive bar chart. 
+The JSON must be an array of objects where each object has a "name" string field and at least one numerical field (e.g., "volume" or "traffic").
+Example:
+```recharts
+[
+  {{"name": "Keyword 1", "volume": 5000}},
+  {{"name": "Keyword 2", "volume": 3000}}
+]
+```
+Do not put any other text inside the recharts code block, only the raw JSON array.
 """
 
 def create_strategy_prompt() -> ChatPromptTemplate:

@@ -4,45 +4,50 @@ Loads system prompts from disk and manages context injection for LangChain templ
 """
 
 import logging
+import json
 from pathlib import Path
 from typing import Any
 
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate, MessagesPlaceholder
 from app.prompts.consultant_prompt import create_strategy_prompt, create_general_qa_prompt
 
 logger = logging.getLogger(__name__)
 
 
 class PersonalityManager:
-    """Manages the MarketingGPT personality system."""
+    """Manages the persona and tone of the MarketingGPT assistant."""
+    
+    def __init__(self, active_persona: str = "COMMIT (The Friendly Expert)"):
+        self.active_persona = active_persona
+        self.personalities_file = Path(__file__).parent / "personalities.json"
+        self.personalities = self._load_personalities()
+        logger.info(f"PersonalityManager successfully initialized with {active_persona}.")
 
-    def __init__(self, system_prompt_path: str | None = None):
-        """Initialize the PersonalityManager.
+    def _load_personalities(self) -> dict:
+        if self.personalities_file.exists():
+            with open(self.personalities_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return {}
+
+    def get_system_prompt(self) -> str:
+        """Returns the system prompt for the currently active persona."""
+        persona_data = self.personalities.get(self.active_persona)
+        if persona_data and "system_prompt" in persona_data:
+            return persona_data["system_prompt"]
         
-        Args:
-            system_prompt_path: Optional path to the system_prompt.md file.
-        """
-        if system_prompt_path:
-            self.system_prompt_path = Path(system_prompt_path)
-        else:
-            self.system_prompt_path = Path(__file__).parent / "system_prompt.md"
-            
-        self.system_prompt_content = self._load_system_prompt()
-        logger.info("PersonalityManager successfully initialized.")
+        # Fallback to the old markdown file if JSON fails
+        prompt_file = Path(__file__).parent / "system_prompt.md"
+        if prompt_file.exists():
+            with open(prompt_file, "r", encoding="utf-8") as f:
+                return f.read()
+        return "You are MarketingGPT, an elite Senior Marketing Consultant."
 
-    def _load_system_prompt(self) -> str:
-        """Load the markdown system prompt from disk."""
-        try:
-            if self.system_prompt_path.exists():
-                content = self.system_prompt_path.read_text(encoding="utf-8")
-                logger.debug("System prompt loaded from %s", self.system_prompt_path)
-                return content
-            else:
-                logger.warning("System prompt file not found at %s. Using default fallback.", self.system_prompt_path)
-                return "You are MarketingGPT, an elite Senior Marketing Consultant."
-        except Exception as e:
-            logger.error("Failed to load system prompt: %s", e)
-            return "You are MarketingGPT, an elite Senior Marketing Consultant."
+    def get_greeting(self) -> str:
+        """Returns the initial greeting message for the active persona."""
+        persona_data = self.personalities.get(self.active_persona)
+        if persona_data and "greeting" in persona_data:
+            return persona_data["greeting"]
+        return "Hello! Please describe your business."
 
     def build_strategy_prompt_string(self, **kwargs: Any) -> str:
         """Build a fully formatted strategy prompt string.
@@ -51,7 +56,7 @@ class PersonalityManager:
         Useful for raw LLM API calls or logging.
         """
         template = create_strategy_prompt()
-        kwargs["system_prompt"] = self.system_prompt_content
+        kwargs["system_prompt"] = self.get_system_prompt()
         
         try:
             return template.format(**kwargs)
@@ -65,9 +70,9 @@ class PersonalityManager:
         This returns a template ready to be used in an LCEL chain.
         """
         template = create_strategy_prompt()
-        return template.partial(system_prompt=self.system_prompt_content)
+        return template.partial(system_prompt=self.get_system_prompt())
 
     def get_qa_prompt_template(self) -> ChatPromptTemplate:
         """Return the LangChain ChatPromptTemplate for Q&A with system_prompt pre-injected."""
         template = create_general_qa_prompt()
-        return template.partial(system_prompt=self.system_prompt_content)
+        return template.partial(system_prompt=self.get_system_prompt())

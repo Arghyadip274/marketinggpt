@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API_Reference</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const rawMarkdown = document.getElementById('raw-markdown').textContent;
+            // Parse markdown
+            document.getElementById('content').innerHTML = marked.parse(rawMarkdown);
+            
+            // Convert language-mermaid code blocks to div.mermaid
+            document.querySelectorAll('code.language-mermaid').forEach(el => {
+                const pre = el.parentElement;
+                const div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = el.textContent;
+                pre.replaceWith(div);
+            });
+            
+            // Render mermaid
+            await mermaid.run();
+        });
+    </script>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            background: #0d1117; 
+            color: #c9d1d9; 
+        }
+        h1, h2, h3, h4 { color: #58a6ff; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; margin-top: 1.5em; }
+        h1 { font-size: 2.5em; }
+        code { background: #161b22; padding: 0.2em 0.4em; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.9em; }
+        pre code { background: none; padding: 0; }
+        pre { background: #161b22; padding: 1rem; border-radius: 6px; overflow-x: auto; border: 1px solid #30363d; }
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+        th, td { border: 1px solid #30363d; padding: 0.5rem 1rem; text-align: left; }
+        th { background: #161b22; font-weight: 600; }
+        blockquote { border-left: 4px solid #30363d; margin: 0; padding-left: 1rem; color: #8b949e; }
+        .mermaid { text-align: center; margin: 2rem 0; background: #161b22; padding: 1rem; border-radius: 8px; border: 1px solid #30363d; }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <!-- Use a hidden div to safely store raw markdown without script tag execution issues -->
+    <div id="raw-markdown" style="display:none;"># Website Builder RAG API - Developer Reference
+
+This document provides the technical integration guide for the Website Builder BRD (Business Requirements Document) RAG API. 
+
+## Base URL
+All requests should be routed to the FastAPI instance.
+Local development: `http://127.0.0.1:8000/api/rag`
+
+## Authentication
+This API is secured using a static Bearer token. You must pass this in the `Authorization` header for **all** requests.
+- **Header Format**: `Authorization: Bearer <TOKEN>`
+- **Development Token**: `marketing4sight_dev_key` (Replace with your `.env` `API_SECRET_KEY` in production).
+
+---
+
+## 1. Upload Document
+Uploads a raw BRD document (PDF, TXT, DOCX) to the server. The document is stored temporarily pending chunking and ingestion.
+
+**Endpoint**: `POST /documents/upload`
+**Content-Type**: `multipart/form-data`
+
+### cURL Example
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/api/rag/documents/upload' \
+  -H 'Authorization: Bearer marketing4sight_dev_key' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@/path/to/your/WEBSITE_BUILDER.docx' \
+  -F 'company_id=Marketing4sight' \
+  -F 'project_id=website_v1'
+```
+
+**Success Response (200 OK)**
+```json
+{
+  "filename": "WEBSITE_BUILDER.docx",
+  "status": "uploaded",
+  "message": "File uploaded successfully. Please call /ingest to process it.",
+  "file_path": "app/rag/documents/WEBSITE_BUILDER.docx"
+}
+```
+
+---
+
+## 2. Ingest Document
+Parses, chunks, and semantically embeds the uploaded document into the multi-tenant vector database (ChromaDB). You must pass the exact `file_path` returned from Step 1.
+
+**Endpoint**: `POST /documents/ingest`
+**Content-Type**: `application/x-www-form-urlencoded`
+
+### cURL Example
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/api/rag/documents/ingest' \
+  -H 'Authorization: Bearer marketing4sight_dev_key' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'file_path=app/rag/documents/WEBSITE_BUILDER.docx' \
+  -d 'company_id=Marketing4sight' \
+  -d 'project_id=website_v1' \
+  -d 'module=website_builder' \
+  -d 'document_type=BRD'
+```
+
+**Success Response (200 OK)**
+```json
+{
+  "status": "success",
+  "chunks_indexed": 14,
+  "file": "WEBSITE_BUILDER.docx"
+}
+```
+
+---
+
+## 3. Query the BRD
+Ask generative questions against a specific project's BRD. The vector database enforces strict tenant isolation using the provided `company_id` and `project_id`.
+
+**Endpoint**: `POST /modules/website-builder/query`
+**Content-Type**: `application/json`
+
+### cURL Example
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/api/rag/modules/website-builder/query' \
+  -H 'Authorization: Bearer marketing4sight_dev_key' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "company_id": "Marketing4sight",
+  "project_id": "website_v1",
+  "question": "What is the primary brand color and what core features should be on the pricing page?"
+}'
+```
+
+**Success Response (200 OK)**
+```json
+{
+  "answer": "Based on the provided BRD, the primary brand color is Hex #FF5733. The core features on the pricing page must include a toggle for monthly/annual billing and a FAQ accordion at the bottom.",
+  "sources": [
+    {
+      "source": "WEBSITE_BUILDER.docx",
+      "chunk_index": 2
+    },
+    {
+      "source": "WEBSITE_BUILDER.docx",
+      "chunk_index": 5
+    }
+  ]
+}
+```
+
+## Error Codes
+- **401 Unauthorized**: Missing or invalid Bearer token.
+- **404 Not Found**: File path does not exist (during ingestion).
+- **500 Internal Server Error**: Gemini LLM failure, ChromaDB query syntax error, or disk IO issues.
+</div>
+</body>
+</html>

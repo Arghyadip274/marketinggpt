@@ -81,8 +81,19 @@ class DocumentIngester:
             doc = docx.Document(str(file_path))
             full_text = []
             for para in doc.paragraphs:
-                full_text.append(para.text)
-            return "\n".join(full_text)
+                text = para.text.strip()
+                if not text:
+                    continue
+                style_name = para.style.name if para.style else ""
+                if style_name.startswith("Heading 1"):
+                    full_text.append(f"# {text}")
+                elif style_name.startswith("Heading 2"):
+                    full_text.append(f"## {text}")
+                elif style_name.startswith("Heading 3"):
+                    full_text.append(f"### {text}")
+                else:
+                    full_text.append(text)
+            return "\n\n".join(full_text)
         except Exception as e:
             logger.error("Failed to read DOCX file %s: %s", file_path, e)
             raise IngestError(f"DOCX parse error: {e}") from e
@@ -119,13 +130,24 @@ class DocumentIngester:
             logger.error("Failed to parse PDF file %s: %s", file_path, e)
             raise IngestError(f"PDF parse error: {e}") from e
 
-    def ingest_file(self, file_path: Path, chunk_size: int | None = None, chunk_overlap: int | None = None) -> int:
+    def ingest_file(
+        self, 
+        file_path: Path, 
+        chunk_size: int | None = None, 
+        chunk_overlap: int | None = None,
+        company_id: str | None = None,
+        project_id: str | None = None,
+        document_type: str | None = None
+    ) -> int:
         """Parse, split, and add a single file to the vector store.
         
         Args:
             file_path: Path to the target file.
             chunk_size: Optional custom chunk size.
             chunk_overlap: Optional custom chunk overlap.
+            company_id: Tenant identifier.
+            project_id: Project identifier.
+            document_type: Type of document (e.g., BRD).
             
         Returns:
             Number of chunks successfully indexed.
@@ -158,29 +180,136 @@ class DocumentIngester:
         c_overlap = chunk_overlap or settings.rag_chunk_overlap
         
         try:
-            from langchain_text_splitters import RecursiveCharacterTextSplitter
+            from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
+            from langchain_core.documents import Document
+            import uuid
+            
+            headers_to_split_on = [
+                ("#", "Header 1"),
+                ("##", "Header 2"),
+                ("###", "Header 3"),
+            ]
+            
+            if suffix in (".md", ".markdown", ".docx"):
+                markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on, strip_headers=False)
+                md_docs = markdown_splitter.split_text(content)
+            else:
+                md_docs = [Document(page_content=content, metadata={})]
+                
             splitter = RecursiveCharacterTextSplitter(chunk_size=c_size, chunk_overlap=c_overlap)
-            chunks = splitter.split_text(content)
+            
+            final_chunks = []
+            final_metadatas = []
+            final_ids = []
+            
+            global_idx = 0
+            
+            for doc in md_docs:
+                section_name = doc.metadata.get("Header 3") or doc.metadata.get("Header 2") or doc.metadata.get("Header 1") or "General"
+                
+                # Create Parent chunk
+                parent_id = str(uuid.uuid4())
+                parent_content = doc.page_content
+                
+                # Base metadata
+                base_meta = {
+                    "source": file_path.name,
+                    "file_type": suffix,
+                    "section": section_name
+                }
+                if company_id: base_meta["company_id"] = company_id
+                if project_id: base_meta["project_id"] = project_id
+                if document_type: base_meta["document_type"] = document_type
+                
+                # Store parent
+                parent_meta = base_meta.copy()
+                parent_meta["is_parent"] = True
+                parent_meta["chunk_type"] = "parent"
+                
+                final_chunks.append(parent_content)
+                final_metadatas.append(parent_meta)
+                final_ids.append(parent_id)
+                
+                # Split parent into children
+                child_splits = splitter.split_text(parent_content)
+                
+                # Store children
+                for idx, split in enumerate(child_splits):
+                    child_meta = base_meta.copy()
+                    child_meta["is_parent"] = False
+                    child_meta["chunk_type"] = "child"
+                    child_meta["parent_id"] = parent_id
+                    child_meta["chunk_index"] = idx
+                    
+                    prefix = f"{company_id}_{project_id}_" if company_id and project_id else ""
+                    child_id = f"{prefix}{file_path.name}_child_{global_idx}"
+                    global_idx += 1
+                    
+                    final_chunks.append(split)
+                    final_metadatas.append(child_meta)
+                    final_ids.append(child_id)
+                    
+            chunks = final_chunks
+            metadatas = final_metadatas
+            ids = final_ids
+            
         except ImportError:
             logger.warning("langchain-text-splitters not available. Using local recursive text splitter fallback.")
             chunks = self._fallback_split_text(content, c_size, c_overlap)
             
+            metadatas = []
+            ids = []
+            for idx, chunk in enumerate(chunks):
+                meta = {
+                    "source": file_path.name,
+                    "file_type": suffix,
+                    "chunk_index": idx,
+                    "total_chunks": len(chunks),
+                    "is_parent": False,
+                    "chunk_type": "child"
+                }
+                if company_id: meta["company_id"] = company_id
+                if project_id: meta["project_id"] = project_id
+                if document_type: meta["document_type"] = document_type
+                    
+                metadatas.append(meta)
+                prefix = f"{company_id}_{project_id}_" if company_id and project_id else ""
+                ids.append(f"{prefix}{file_path.name}_chunk_{idx}")
+
         if not chunks:
             logger.warning("No chunks generated for file: %s", file_path)
             return 0
             
-        # 3. Form metadata & IDs
-        metadatas = []
-        ids = []
-        for idx, chunk in enumerate(chunks):
-            metadatas.append({
-                "source": file_path.name,
-                "file_type": suffix,
-                "chunk_index": idx,
-                "total_chunks": len(chunks)
-            })
-            # Format: {filename}_chunk_{idx}
-            ids.append(f"{file_path.name}_chunk_{idx}")
+        # --- Priority 2: Ingestion Validation ---
+        def validate_ingestion():
+            import re
+            expected_sections = set()
+            for line in content.split('\n'):
+                line = line.strip()
+                if line.startswith('# ') or line.startswith('## ') or line.startswith('### '):
+                    expected_sections.add(line.lstrip('#').strip())
+            
+            generated_sections = set()
+            parents = 0
+            children = 0
+            for meta in metadatas:
+                sec = meta.get("section")
+                if sec and sec != "General":
+                    generated_sections.add(sec)
+                if meta.get("chunk_type") == "parent":
+                    parents += 1
+                elif meta.get("chunk_type") == "child":
+                    children += 1
+                    
+            missing = expected_sections - generated_sections
+            if missing:
+                logger.error("Ingestion Validation Failed for %s. Missing sections: %s", file_path.name, missing)
+            else:
+                logger.info("Ingestion Validation Passed for %s. Detected %d sections, %d parents, %d children.", 
+                            file_path.name, len(expected_sections), parents, children)
+                            
+        validate_ingestion()
+        # ----------------------------------------
             
         # 4. Insert chunks
         if self.retriever.use_chroma and self.retriever.collection is not None:

@@ -44,6 +44,7 @@ class MarketingState(TypedDict, total=False):
     
     # Conversation History
     chat_history: list[Any]
+    active_persona: str
     
     # RAG Context
     rag_context: list[str]
@@ -146,9 +147,10 @@ def node_generate_strategy(state: MarketingState) -> MarketingState:
             from langchain_google_genai import ChatGoogleGenerativeAI
             
             logger.info("Google API Key detected. Engaging Gemini Live Generation!")
-            llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", google_api_key=api_key)
+            llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", google_api_key=api_key)
             
-            manager = PersonalityManager()
+            persona_name = state.get("active_persona", "COMMIT (The Friendly Expert)")
+            manager = PersonalityManager(persona_name)
             prompt_template = manager.get_strategy_prompt_template()
             
             rag_context = "\n".join(state.get("rag_context", []))

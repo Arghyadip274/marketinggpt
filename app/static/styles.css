@@ -1,0 +1,97 @@
+/* Premium Streamlit Dark Theme Custom CSS */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Apply global font */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Hide default Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+/* Removed header hiding so the sidebar toggle button remains visible! */
+
+/* Main App Container Background */
+[data-testid="stAppViewContainer"] {
+    background-color: #0d1117; /* Deep GitHub Dark */
+    color: #e6edf3;
+}
+
+/* Sidebar Glassmorphism */
+[data-testid="stSidebar"] {
+    background: rgba(22, 27, 34, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Chat Bubbles Container */
+[data-testid="stChatMessage"] {
+    background-color: transparent !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* User Message */
+[data-testid="stChatMessage"][data-testid*="user"] {
+    background: linear-gradient(135deg, #1f6feb 0%, #3b82f6 100%) !important;
+    color: #ffffff;
+    margin-left: 20%;
+    border-bottom-right-radius: 2px;
+}
+
+/* Assistant Message */
+[data-testid="stChatMessage"][data-testid*="assistant"] {
+    background: rgba(33, 38, 45, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-right: 10%;
+    border-bottom-left-radius: 2px;
+}
+
+/* Chat Input Field Container */
+[data-testid="stChatInput"] {
+    background: #161b22 !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    padding: 4px 8px !important;
+}
+
+/* Chat Input Text Area */
+[data-testid="stChatInput"] textarea {
+    color: #e6edf3 !important;
+    background-color: transparent !important;
+}
+
+/* Smooth fade in for messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em;
+}
+
+/* Buttons (if any) */
+.stButton > button {
+    background: linear-gradient(135deg, #238636 0%, #2ea043 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(46, 160, 67, 0.4);
+}
